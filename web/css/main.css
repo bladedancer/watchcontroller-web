@@ -1,0 +1,15 @@
+
+#config .input-group-text {
+    width: 120px;
+}
+
+#output {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#output .card {
+    margin: 20px;
+    min-width: 25rem;
+}

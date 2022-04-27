@@ -1,0 +1,13 @@
+group: management
+apiVersion: v1alpha1
+kind: WatchTopic
+name: grpcweb
+spec:
+  filters:
+    - group: "*"
+      kind: "*"
+      name: "*"
+      type:
+      - created
+      - updated
+      - deleted

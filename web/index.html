@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>GRPC Web Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="config" class="jumbotron">
+        <h1 class="display-4">GRPC Web</h1>
+        <p class="lead">Watched events are streamed from the server to this client.</p>
+        <hr class="my-4">
+        <form class="row g-3 needs-validation" novalidate>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text">Central</span>
+                </div>
+                <input type="text" class="form-control" id="central" placeholder="https://apicentral.axway.com">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text">Org Id</span>
+                </div>
+                <input type="text" class="form-control" id="orgid" placeholder="orgid" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text">Watch Topic</span>
+                </div>
+                <input type="text" class="form-control" id="watchtopic" placeholder="name" required>
+                <div class="invalid-feedback">
+                    Please a WatchTopic name.
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text">Token</span>
+                </div>
+                <input type="text" class="form-control" id="token" placeholder="access token" required>
+                <div class="invalid-feedback">
+                    Please a service account access token.
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <button id="watchBtn" class="btn btn-primary" type="submit">Watch</button>
+            </div>    
+        </form>    
+    </div>
+    <div id="output">
+    </div>
+    
+</body>
+<script src='js/bundle.js'></script>
+<script src='js/main.js'></script>
+</html>
