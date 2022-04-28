@@ -16,6 +16,10 @@ let callbacks = {
         console.log("Stream closed", e);
         reset(); 
     },
+    error: (e) => {
+        console.log("Error - reconnecting", e);
+        startWatch();
+    },
     data: (d) => {
         console.log("data", d);
         let types = ["created", "updated", "deleted", "subresource updated"];
@@ -33,6 +37,7 @@ form.addEventListener('submit', (event) => {
     event.stopPropagation()
 
     if (form.checkValidity()) {
+        output.innerHTML = "";
         startWatch();
     }
 
@@ -55,7 +60,6 @@ function addEvent(detail) {
 }
 
 function startWatch() {
-    output.innerHTML = "";
     let hostname = centralCtrl.value || 'https://apicentral.axway.com';
     let selfLink = '/management/v1alpha1/watchtopics/' + topicCtrl.value;
     let token = tokenCtrl.value;
