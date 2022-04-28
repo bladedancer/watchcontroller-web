@@ -7,6 +7,16 @@ spec:
     - group: "*"
       kind: "*"
       name: "*"
+      scope:
+        kind: "*"
+        name: "*"
+      type:
+      - created
+      - updated
+      - deleted
+    - group: "*"
+      kind: "*"
+      name: "*"
       type:
       - created
       - updated

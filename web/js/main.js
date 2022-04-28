@@ -18,7 +18,7 @@ let callbacks = {
     },
     data: (d) => {
         console.log("data", d);
-        let types = ["created", "updated", "deleted"];
+        let types = ["created", "updated", "deleted", "subresource updated"];
         addEvent({
             name: d.getPayload().getName(),
             kind: d.getPayload().getKind(),
